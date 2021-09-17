@@ -10,6 +10,7 @@ const viewsPath = path.join(__dirname,'../templates/views')// if we change the v
 const partialsPath = path.join(__dirname,'../templates/partials')
 
 const app = express()
+const port = process.env.PORT || 3000;
 
 app.set('view engine','hbs')
 app.set('views',viewsPath) // if we change the views directory name from views to templates
@@ -35,5 +36,5 @@ app.get('',(req,res) => {
 app.get('/help',(req,res) => {
     res.send({name:'annu'})
 }) 
-app.listen(3000, () => console.log('Server is up!'))
+app.listen(port, () => console.log('Server is up!' + port))
 
